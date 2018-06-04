@@ -8,19 +8,19 @@ describe('Quotes Reducer', () => {
     expect(reducer(undefined, {})).to.deep.equal([]);
   });
 
-  it('should handle ADD_QUOTE', () => {
-    const quote = {
-      id: uuid(),
-      content: 'Moral indignation is jealousy with a halo.',
-      author: 'H.G. Wells',
-      votes: 0
-    };
-
-    expect(reducer(undefined, {
-      type: 'ADD_QUOTE',
-      quote
-    })).to.deep.equal([quote]);
-  });
+  // it('should handle ADD_QUOTE', () => {
+  //   const quote = {
+  //     id: uuid(),
+  //     content: 'Moral indignation is jealousy with a halo.',
+  //     author: 'H.G. Wells',
+  //     votes: 0
+  //   };
+  //
+  //   expect(reducer(undefined, {
+  //     type: 'ADD_QUOTE',
+  //     quote
+  //   })).to.deep.equal([quote]);
+  // });
 
   it('should handle REMOVE_QUOTE', () => {
     const firstId = uuid();
@@ -63,9 +63,9 @@ describe('Quotes Reducer', () => {
       }
     ];
 
-    expect(reducer(initialState, { 
-      type: 'UPVOTE_QUOTE', 
-      quoteId: firstId 
+    expect(reducer(initialState, {
+      type: 'UPVOTE_QUOTE',
+      quoteId: firstId
     })).to.deep.equal(
       [
         {
@@ -89,9 +89,9 @@ describe('Quotes Reducer', () => {
       }
     ];
 
-    expect(reducer(initialState, { 
-      type: 'DOWNVOTE_QUOTE', 
-      quoteId: firstId 
+    expect(reducer(initialState, {
+      type: 'DOWNVOTE_QUOTE',
+      quoteId: firstId
     })).to.deep.equal(
       [
         {
@@ -115,9 +115,9 @@ describe('Quotes Reducer', () => {
       }
     ];
 
-    expect(reducer(initialState, { 
-      type: 'DOWNVOTE_QUOTE', 
-      quoteId: firstId 
+    expect(reducer(initialState, {
+      type: 'DOWNVOTE_QUOTE',
+      quoteId: firstId
     })).to.deep.equal(
       [
         {
